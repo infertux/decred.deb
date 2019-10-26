@@ -10,9 +10,6 @@ cd "$(dirname "$0")"
 pushd dcrd.git
     git pull
     go build -v
-    pushd cmd/dcrctl
-        go build -v
-    popd
 popd
 
 cp -an dcrd.git/sampleconfig/sampleconfig.go dcrd.conf
@@ -22,8 +19,6 @@ read -r
 
 cp -a dcrd.git/dcrd .
 strip dcrd
-cp -a dcrd.git/cmd/dcrctl/dcrctl .
-strip dcrctl
 
 fpm -f --verbose -s dir -t deb \
     --name dcrd \
@@ -37,7 +32,7 @@ fpm -f --verbose -s dir -t deb \
     --version "${version}" \
     --iteration "${iteration}" \
     --after-install ../create-user.sh \
-    --depends dcrctl \
+    --depends "dcrctl=${version}" \
     --config-files /etc/decred/dcrd.conf \
     --package dcrd.deb \
     dcrd=/usr/bin/ \
