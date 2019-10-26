@@ -7,20 +7,18 @@ iteration=${2:-1}
 
 cd "$(dirname "$0")"
 
-pushd dcrd.git
-    git pull
-    pushd cmd/dcrctl
-        go build -v
-    popd
+git submodule update --remote
+
+pushd dcrd.git/cmd/dcrctl
+go build -v
 popd
 
 cp -an dcrd.git/cmd/dcrctl/sample-dcrctl.conf dcrctl.conf
-diff -u dcrd.git/cmd/dcrctl/sample-dcrctl.conf dcrctl.conf || true
-echo "Does the diff look okay? ^C to abort"
-read -r
+diff -u dcrd.git/cmd/dcrctl/sample-dcrctl.conf dcrctl.conf || sleep 3
 
 cp -a dcrd.git/cmd/dcrctl/dcrctl .
 strip dcrctl
+sha256sum dcrctl
 
 fpm -f --verbose -s dir -t deb \
     --name dcrctl \
@@ -37,3 +35,5 @@ fpm -f --verbose -s dir -t deb \
     --package dcrctl.deb \
     dcrctl=/usr/bin/ \
     dcrctl.conf=/etc/decred/
+
+sha256sum dcrctl.deb
