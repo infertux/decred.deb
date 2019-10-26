@@ -1,0 +1,10 @@
+[Unit]
+Description=Decred dcrd
+[Service]
+Type=simple
+User=decred
+Group=decred
+ExecStart=/usr/bin/dcrd -C /etc/dcrd.conf
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
