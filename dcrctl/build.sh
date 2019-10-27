@@ -2,9 +2,6 @@
 
 set -euo pipefail
 
-version=${1:-1.5.0}
-iteration=${2:-1}
-
 cd "$(dirname "$0")"
 
 git submodule update --remote
@@ -20,20 +17,20 @@ cp -a dcrd.git/cmd/dcrctl/dcrctl .
 strip dcrctl
 sha256sum dcrctl
 
-fpm -f --verbose -s dir -t deb \
-    --name dcrctl \
-    --provides dcrctl \
-    --description "Decred dcrctl" \
-    --url "https://github.com/decred/dcrd/tree/master/cmd/dcrctl" \
-    --license "ISC" \
-    --vendor "https://www.decred.org/" \
-    --maintainer "Cédric Felizard <cedric@felizard.eu>" \
-    --version "${version}" \
-    --iteration "${iteration}" \
-    --after-install ../create-user.sh \
-    --config-files /etc/decred/dcrctl.conf \
-    --package dcrctl.deb \
-    dcrctl=/usr/bin/ \
-    dcrctl.conf=/etc/decred/
+set -x
 
-sha256sum dcrctl.deb
+container=deb-builder
+volume=/root/HOST
+docker run --name $container --rm -d -t -v "${PWD}:${volume}" debian:unstable
+docker exec $container apt-get update
+docker exec $container apt-get upgrade -y
+docker exec $container apt-get install -y debhelper
+docker exec --workdir $volume $container dpkg-buildpackage -b
+
+# XXX: dpkg-buildpackage outputs the .deb in parent dir so we need to copy it that way
+docker exec --workdir $volume $container ls -l ..
+docker exec --workdir $volume $container find .. -type f -name "*.deb" -exec cp -av "{}" dist/ \;
+docker stop $container
+
+ls -l dist/*
+sha256sum dist/*

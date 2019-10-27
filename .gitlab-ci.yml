@@ -7,5 +7,5 @@ debian-stretch:
   script: ./ci.sh
 
 debian-buster:
-  image: debian:buster
+  image: debian:buster-slim
   script: ./ci.sh

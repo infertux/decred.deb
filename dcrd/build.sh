@@ -35,6 +35,7 @@ fpm -f --verbose -s dir -t deb \
     --iteration "${iteration}" \
     --after-install ../create-user.sh \
     --deb-after-purge purge.sh \
+    --depends "libc6" \
     --depends "${depends}" \
     --config-files /etc/decred/dcrd.conf \
     --package dcrd.deb \
