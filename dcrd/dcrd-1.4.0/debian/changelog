@@ -1,0 +1,5 @@
+dcrd (1.4.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- root <cedric@felizard.eu>  Wed, 30 Oct 2019 07:17:11 +0000

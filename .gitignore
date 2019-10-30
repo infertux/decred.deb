@@ -1,1 +1,4 @@
 *.deb
+/*/debian/*.substvars
+/*/debian/.debhelper/
+/*/debian/debhelper-build-stamp
