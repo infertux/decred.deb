@@ -6,6 +6,6 @@
 version=4
 
 # GitHub hosted projects
-opts="filenamemangle=s%(?:.*?)?v?(\d[\d.]*)\.tar\.gz%<project>-$1.tar.gz%" \
-   https://github.com/decred/dcrd/tags \
+opts="filenamemangle=s%decred-linux-amd64-v(\d[\d.]*)\.tar\.gz%<project>-$1.tar.gz%" \
+   https://github.com/decred/decred-binaries/releases \
    (?:.*?/)?v?(\d[\d.]*)\.tar\.gz debian uupdate

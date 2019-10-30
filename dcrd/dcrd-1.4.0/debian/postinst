@@ -20,6 +20,8 @@ set -e
 
 case "$1" in
     configure)
+        # https://wiki.debian.org/AccountHandlingInMaintainerScripts
+        adduser --system --home /var/lib/decred decred
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

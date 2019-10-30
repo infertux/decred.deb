@@ -1,8 +1,8 @@
 Source: dcrd
-Section: unknown
+Section: net
 Priority: optional
-Maintainer: root <cedric@felizard.eu>
-Build-Depends: debhelper-compat (= 12)
+Maintainer: Cédric Félizard <cedric@felizard.fr>
+Build-Depends: debhelper-compat (= 12), dh-exec
 Standards-Version: 4.4.0
 Homepage: https://github.com/decred/decred-binaries/releases
 #Vcs-Browser: https://salsa.debian.org/debian/dcrd
