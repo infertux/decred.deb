@@ -1,2 +1,5 @@
-/dcrctl
-/debian/dcrctl/
+/*.debian.tar.xz
+/*.dsc
+/*.build
+/*.buildinfo
+/*.changes
