@@ -12,7 +12,7 @@ checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
 are templates for supplementary fields that you might want to add:
 
 Origin: upstream, https://github.com/decred/dcrd/blob/master/sampleconfig/sampleconfig.go
-Reviewed-By: Cédric Félizard <cedric@felizard.eu>
+Reviewed-By: Cédric Félizard <cedric@felizard.fr>
 Last-Update: 2019-10-30
 
 --- /dev/null

@@ -1,6 +1,0 @@
-dcrctl (1.0-1) UNRELEASED; urgency=medium
-
-  * Initial release. (Closes: #XXXXXX)
-  * Test dch -v
-
- -- root <root@0f830d774da2>  Mon, 28 Oct 2019 02:00:28 +0000

@@ -1,9 +1,0 @@
-Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: dcrctl
-Upstream-Contact: https://github.com/decred/dcrd/issues
-Source: https://github.com/decred/dcrd
-
-Files: *
-Copyright: Copyright (c) 2013-2016 The btcsuite developers
-           Copyright (c) 2015-2019 The Decred developers
-License: ISC
