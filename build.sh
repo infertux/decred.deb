@@ -21,7 +21,7 @@ for package in dcrctl dcrd; do
     dir="${volume}/${package}"
 
     docker exec --workdir "$dir" $container ./build.sh
-    docker exec --workdir "$dir" $container dpkg-buildpackage -b
+    docker exec --workdir "$dir" $container debuild
 
     # XXX: dpkg-buildpackage puts the .deb in parent dir so we copy it to dist/
     docker exec --workdir "$dir" $container find .. -type f -name "${package}*.deb" -exec mv -v {} dist/ \;
