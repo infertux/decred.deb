@@ -1,0 +1,15 @@
+Source: dcrd
+Section: net
+Priority: optional
+Maintainer: Cédric Félizard <cedric@felizard.fr>
+Build-Depends: debhelper-compat (= 12), dh-exec
+Standards-Version: 4.4.0
+Homepage: https://github.com/decred/decred-binaries/releases
+#Vcs-Browser: https://salsa.debian.org/debian/dcrd
+#Vcs-Git: https://salsa.debian.org/debian/dcrd.git
+
+Package: dcrd
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Decred dcrd
+ Decred daemon in Go
