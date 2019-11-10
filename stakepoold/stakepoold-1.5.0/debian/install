@@ -1,0 +1,3 @@
+#!/usr/bin/dh-exec
+sample-stakepoold.conf => /etc/decred/stakepoold.conf
+stakepoold => /usr/bin/stakepoold

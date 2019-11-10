@@ -10,6 +10,6 @@ Homepage: https://github.com/decred/decred-binaries/releases
 
 Package: dcrwallet
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}, adduser
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser, dcrctl
 Description: Decred dcrwallet
  Decred CLI wallet in Go
