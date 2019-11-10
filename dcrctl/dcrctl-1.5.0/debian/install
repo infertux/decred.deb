@@ -1,0 +1,3 @@
+#!/usr/bin/dh-exec
+sample-dcrctl.conf => /etc/decred/dcrctl.conf
+dcrctl => /usr/bin/dcrctl
