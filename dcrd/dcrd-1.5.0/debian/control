@@ -10,6 +10,6 @@ Homepage: https://github.com/decred/decred-binaries/releases
 
 Package: dcrd
 Architecture: amd64
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser
 Description: Decred dcrd
  Decred daemon in Go
