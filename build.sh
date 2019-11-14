@@ -15,6 +15,7 @@ docker pull debian:unstable
 docker exec $container apt-get update
 docker exec $container apt-get upgrade -y
 docker exec $container apt-get install -y devscripts dh-exec vim quilt lintian
+docker exec $container apt-get autoremove -y --purge
 
 dir="${volume}/${target}"
 package=${target#*/}
