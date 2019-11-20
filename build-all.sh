@@ -10,3 +10,6 @@ for target in dcrctl dcrd dcrwallet stakepoold; do
     path="${target}/${target}-${version}"
     ./build.sh $path
 done
+
+find . -name "*.deb" -exec sha256sum {} \;
+find . -name "*.deb" -exec ls -lh {} \;

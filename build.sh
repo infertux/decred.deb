@@ -10,7 +10,9 @@ volume=/root/HOST
 
 docker pull debian:unstable
 
-[ "$(docker ps -qf "name=${container}")" ] || docker run --name $container -d -t -v "${PWD}:${volume}" debian:unstable
+[ "$(docker ps -qaf "name=${container}")" ] || docker run --name $container -d -t -v "${PWD}:${volume}" debian:unstable
+
+docker start $container
 
 docker exec $container apt-get update
 docker exec $container apt-get upgrade -y
