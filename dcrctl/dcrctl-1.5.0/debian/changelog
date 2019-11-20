@@ -1,5 +1,9 @@
-dcrctl (1.5.0-1) UNRELEASED; urgency=medium
+dcrctl (1.5.0-2) UNRELEASED; urgency=medium
 
+  [ Cédric Félizard ]
   * Initial release
 
- -- Cédric Félizard <cedric@felizard.fr>  Sat, 09 Nov 2019 10:43:24 +0000
+  [ Cédric Félizard ]
+  * Update to dcrctl 1.5.0-rc2
+
+ -- Cédric Félizard <cedric@felizard.fr>  Wed, 20 Nov 2019 16:31:12 +0000
