@@ -4,7 +4,8 @@ set -euxo pipefail
 
 cd "$(dirname "$0")"
 
-target="${1:-dcrd/dcrd-1.5.0}"
+target="${1:-dcrd/dcrd-1.5.1}"
+interactive="${2:-}"
 container=deb-builder
 volume=/root/HOST
 
@@ -23,16 +24,16 @@ dir="${volume}/${target}"
 package=${target#*/}
 package="${package/-/_}*.deb"
 
-docker exec --workdir "$dir" $container debuild || docker exec -ti $container /bin/bash
+if [ "$interactive" ] ; then
+    docker exec -ti $container /bin/bash
+else
+    docker exec --workdir "$dir" $container debuild -uc -us || docker exec -ti $container /bin/bash
 
-docker exec --workdir "$dir" $container find .. -type f -name "$package" -exec lintian --info --pedantic {} \;
-docker exec --workdir "$dir" $container find .. -type f -name "$package" -exec dpkg -c {} \;
-docker exec --workdir "$dir" $container find .. -type f -name "$package" -exec ls -lh {} \;
-docker exec --workdir "$dir" $container find .. -type f -name "$package" -exec sha256sum {} \;
-
-# docker exec --workdir "$dir" $container find dist -type f -name "$package" -exec dpkg -i {} \;
-# docker exec $container dpkg -L $package_name
-# docker exec $container dpkg -V $package_name
+    docker exec --workdir "$dir" $container find .. -type f -name "$package" -exec lintian --info --pedantic {} \;
+    docker exec --workdir "$dir" $container find .. -type f -name "$package" -exec dpkg -c {} \;
+    docker exec --workdir "$dir" $container find .. -type f -name "$package" -exec ls -lh {} \;
+    docker exec --workdir "$dir" $container find .. -type f -name "$package" -exec sha256sum {} \;
+fi
 
 sudo chown -R "${USER}:" ./*
 
