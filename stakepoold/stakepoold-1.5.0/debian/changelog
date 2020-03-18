@@ -1,5 +1,6 @@
-stakepoold (1.5.0-1) UNRELEASED; urgency=medium
+stakepoold (1.5.0-2) unstable; urgency=medium
 
-  * Initial release
+  [ Cédric Félizard ]
+  * Rebuild stakepoold at Git tag https://github.com/decred/dcrstakepool/releases/tag/v1.5.0
 
- -- Cédric Félizard <cedric@felizard.fr>  Sat, 09 Nov 2019 10:43:24 +0000
+ -- Cédric Félizard <cedric@felizard.fr>  Wed, 18 Mar 2020 21:29:09 +0000
