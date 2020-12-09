@@ -36,5 +36,3 @@ else
 fi
 
 sudo chown -R "${USER}:" ./*
-
-# docker stop $container
