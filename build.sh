@@ -4,7 +4,7 @@ set -euxo pipefail
 
 cd "$(dirname "$0")"
 
-target="${1:-dcrd/dcrd-1.5.1}"
+target="${1:-dcrd/dcrd-1.6.0}"
 interactive="${2:-}"
 container=deb-builder
 volume=/root/HOST
@@ -15,10 +15,14 @@ docker pull debian:unstable
 
 docker start $container
 
+docker exec $container dpkg --configure -a
 docker exec $container apt-get update
 docker exec $container apt-get upgrade -y
 docker exec $container apt-get install -y devscripts dh-exec vim quilt lintian
+docker exec $container apt-get install -y -t unstable golang
 docker exec $container apt-get autoremove -y --purge
+
+docker exec $container go version
 
 dir="${volume}/${target}"
 package=${target#*/}
