@@ -7,11 +7,14 @@ The builds are reproducible and hosted at the APT repository https://deb.cyberbi
 
 ## How to package a new release
 
-Download the files from https://github.com/decred/decred-binaries/releases
+```bash
+# download these 3 files from https://github.com/decred/decred-binaries/releases:
+# decred-linux-amd64-v1.6.0.tar.gz, decred-v1.6.0-manifest.txt and decred-v1.6.0-manifest.txt.asc
+
 pushd dcrd
-ln -s ../decred-linux-amd64-v1.6.0-rc4.tar.gz dcrd_1.6.0.orig.tar.gz
+ln -s ../decred-linux-amd64-v1.6.0.tar.gz dcrd_1.6.0.orig.tar.gz
 tar xvf dcrd_1.6.0.orig.tar.gz
-mv decred-linux-amd64-v1.6.0-rc4 dcrd-1.6.0
+mv decred-linux-amd64-v1.6.0 dcrd-1.6.0
 cp -ra dcrd-1.5.1/debian dcrd-1.6.0
 pushd dcrd-1.6.0/debian
 vim -p changelog copyright # bump version, copyright year, etc.
@@ -20,8 +23,9 @@ popd
 vim -p build{,-all}.sh # bump version
 git add -A
 ./build.sh dcrd/dcrd-1.6.0
-
-
+git status
+git commit
+```
 
 ## License
 
