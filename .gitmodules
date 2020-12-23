@@ -1,4 +1,0 @@
-[submodule "dcrd"]
-	path = dcrd/dcrd.git
-	url = https://github.com/decred/dcrd.git
-	branch = release-v1.5
