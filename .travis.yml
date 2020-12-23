@@ -1,0 +1,10 @@
+services:
+  - docker
+
+addons:
+  apt:
+    packages:
+      - docker-ce
+
+script:
+  - ./build-all.sh
