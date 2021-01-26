@@ -1,3 +1,9 @@
+dcrwallet (1.6.0-2) unstable; urgency=medium
+
+  * Update to dcrwallet 1.6.0
+
+ -- Cédric Félizard <cedric@felizard.fr>  Wed, 26 Jan 2021 10:34:50 +0000
+
 dcrwallet (1.6.0-1) unstable; urgency=medium
 
   * Update to dcrwallet 1.6.0-rc4
