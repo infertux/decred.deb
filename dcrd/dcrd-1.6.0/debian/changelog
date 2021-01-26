@@ -1,3 +1,9 @@
+dcrd (1.6.0-2) unstable; urgency=medium
+
+  * Update to dcrd 1.6.0
+
+ -- Cédric Félizard <cedric@felizard.fr>  Tue, 26 Jan 2021 10:14:30 +0000
+
 dcrd (1.6.0-1) unstable; urgency=medium
 
   * Update to dcrd 1.6.0-rc4
