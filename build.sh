@@ -4,7 +4,7 @@ set -euxo pipefail
 
 cd "$(dirname "$0")"
 
-target="${1:-dcrd/dcrd-1.6.0}"
+target="${1:-dcrd/dcrd-1.6.1}"
 interactive="${2:-}"
 container=decred-builder
 volume=/root/HOST
