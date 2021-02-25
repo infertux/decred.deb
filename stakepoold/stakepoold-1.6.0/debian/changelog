@@ -1,3 +1,9 @@
+stakepoold (1.6.0-2) unstable; urgency=medium
+
+  * Rebuild stakepoold with increased timeout to 5000 at https://github.com/decred/dcrstakepool/commit/6859082637e5122e9056e7a974244b1a284b6f0e
+
+ -- Cédric Félizard <cedric@felizard.fr>  Thu, 25 Feb 2021 11:44:00 +0000
+
 stakepoold (1.6.0-1) unstable; urgency=medium
 
   * Rebuild stakepoold at Git commit https://github.com/decred/dcrstakepool/commit/31ef8c47620fc09f910dfcb1c6a403ab11f7d59e
