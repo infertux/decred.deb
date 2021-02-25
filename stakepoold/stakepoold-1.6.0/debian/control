@@ -1,0 +1,17 @@
+Source: stakepoold
+Section: net
+Priority: optional
+Maintainer: Cédric Félizard <cedric@felizard.fr>
+Build-Depends: debhelper-compat (= 12), dh-exec
+Standards-Version: 4.4.0
+Homepage: https://github.com/decred/decred-binaries/releases
+#Vcs-Browser: https://salsa.debian.org/debian/stakepoold
+#Vcs-Git: https://salsa.debian.org/debian/stakepoold.git
+
+Package: stakepoold
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser
+Description: Decred stakepoold
+ Decred voting daemon in Go for dcrstakepool
+ .
+ https://github.com/decred/dcrstakepool/tree/master/backend/stakepoold

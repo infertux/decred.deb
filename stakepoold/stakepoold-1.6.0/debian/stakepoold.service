@@ -1,0 +1,9 @@
+[Unit]
+Description=Decred stakepoold
+[Service]
+Type=simple
+User=decred
+ExecStart=/usr/bin/stakepoold -C /etc/decred/stakepoold.conf
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
