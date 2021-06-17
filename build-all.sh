@@ -3,7 +3,6 @@
 set -euxo pipefail
 
 dcr_version=1.6.3
-stakepoold_version=1.6.0
 
 cd "$(dirname "$0")"
 
@@ -18,8 +17,6 @@ build() {
 for dcr in dcrctl dcrd dcrwallet; do
     build $dcr $dcr_version
 done
-
-build stakepoold $stakepoold_version
 
 find . -name "*.deb" -exec sha256sum {} \;
 find . -name "*.deb" -exec ls -lh {} \;
