@@ -1,0 +1,9 @@
+[Unit]
+Description=Decred dcrwallet
+[Service]
+Type=simple
+User=decred
+ExecStart=/usr/bin/dcrwallet -C /etc/decred/dcrwallet.conf
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
