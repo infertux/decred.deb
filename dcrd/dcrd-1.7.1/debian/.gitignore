@@ -1,0 +1,8 @@
+/*.debhelper
+/*.substvars
+/.debhelper/
+/debhelper-build-stamp
+/files
+/tmp/
+
+/dcrd/

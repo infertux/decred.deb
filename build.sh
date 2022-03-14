@@ -4,7 +4,7 @@ set -euxo pipefail
 
 cd "$(dirname "$0")"
 
-target="${1:-dcrd/dcrd-1.6.3}"
+target="${1:-dcrd/dcrd-1.7.1}"
 interactive="${2:-}"
 container=decred-builder
 volume=/root/HOST
@@ -17,7 +17,7 @@ docker pull $image
 docker start $container
 
 docker exec $container dpkg --configure -a
-docker exec $container bash -c 'echo "deb http://ftp.fr.debian.org/debian unstable main" | tee /etc/apt/sources.list' # XXX: the global mirror often times out for me so using a local mirror instead
+docker exec $container bash -c 'echo "deb http://ftp.sg.debian.org/debian unstable main" | tee /etc/apt/sources.list' # XXX: the global mirror often times out for me so using a local mirror instead
 docker exec $container apt-get update
 docker exec $container apt-get upgrade -y
 docker exec $container apt-get install -y devscripts dh-exec vim quilt lintian
