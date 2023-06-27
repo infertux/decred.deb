@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-dcr_version=1.7.1
+dcr_version=1.8.0
 
 cd "$(dirname "$0")"
 
