@@ -11,3 +11,7 @@ jobs:
         with:
           buildpackage-opts: --build=binary --no-sign
           source-dir: dcrd/dcrd-2.0.4
+      - uses: actions/upload-artifact@v4
+        with:
+          path: debian/artifacts/
+          name: debian_packages
