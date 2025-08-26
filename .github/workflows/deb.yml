@@ -10,3 +10,4 @@ jobs:
           DEB_BUILD_OPTIONS: noautodbgsym
         with:
           buildpackage-opts: --build=binary --no-sign
+          source-dir: dcrd/dcrd-2.0.4
