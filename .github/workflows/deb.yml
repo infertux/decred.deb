@@ -5,13 +5,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - uses: jtdor/build-deb-action@v1
         env:
           DEB_BUILD_OPTIONS: noautodbgsym
         with:
           buildpackage-opts: --build=binary --no-sign
           source-dir: dcrd/dcrd-2.0.4
+          
       - uses: actions/upload-artifact@v4
+        id: artifact-upload-step
         with:
           path: debian/artifacts/
           name: debian_packages
+          compression-level: 0 # no compression
+          
+      - name: Output artifact ID
+        run:  echo 'Artifact ID is ${{ steps.artifact-upload-step.outputs.artifact-id }}'
