@@ -4,7 +4,7 @@ set -euxo pipefail
 
 cd "$(dirname "$0")"
 
-target="${1:-dcrd/dcrd-2.1.1}"
+target="${1:-dcrd/dcrd-2.0.4}"
 interactive="${2:-}"
 container=decred-builder
 volume=/root/HOST
@@ -18,11 +18,9 @@ docker start $container
 
 docker exec $container dpkg --configure -a
 docker exec $container bash -c "echo \"deb http://ftp.sg.debian.org/debian ${channel} main\" | tee /etc/apt/sources.list"
-#docker exec $container bash -c "echo \"deb http://ftp.sg.debian.org/debian ${channel}-backports main\" | tee -a /etc/apt/sources.list"
 docker exec $container apt-get update
 docker exec $container apt-get upgrade -y
-docker exec $container apt-get install -y build-essential devscripts dh-exec vim quilt lintian
-docker exec $container apt-get install -y -t ${channel}-backports golang-1.24
+docker exec $container apt-get install -y build-essential devscripts dh-exec vim quilt lintian golang
 docker exec $container apt-get autoremove -y --purge
 
 dir="${volume}/${target}"

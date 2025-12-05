@@ -1,0 +1,3 @@
+#!/usr/bin/dh-exec
+sample-dcrwallet.conf => /etc/decred/dcrwallet.conf
+dcrwallet => /usr/bin/dcrwallet
