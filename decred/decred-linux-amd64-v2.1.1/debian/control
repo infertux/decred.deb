@@ -1,4 +1,4 @@
-Source: decred
+Source: dcrctl
 Section: net
 Priority: optional
 Maintainer: Cédric Félizard <cedric@felizard.fr>

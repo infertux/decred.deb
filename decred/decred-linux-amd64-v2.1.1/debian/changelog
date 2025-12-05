@@ -3,16 +3,3 @@ dcrctl (2.1.1-1) unstable; urgency=medium
   * Update to dcrctl 2.1.1
 
  -- Cédric Félizard <cedric@felizard.fr>  Fri, 05 Dec 2025 03:00:00 +0000
-
-dcrd (2.1.1-1) unstable; urgency=medium
-
-  * Update to dcrd 2.1.1
-
- -- Cédric Félizard <cedric@felizard.fr>  Fri, 05 Dec 2025 03:00:00 +0000
-
-dcrwallet (2.1.1-1) unstable; urgency=medium
-
-  * Update to dcrwallet 2.1.1
-
- -- Cédric Félizard <cedric@felizard.fr>  Fri, 05 Dec 2025 03:00:00 +0000
-
