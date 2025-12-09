@@ -1,8 +1,6 @@
 on:
   push:
   pull_request:
-  #schedule:
-  #  - cron: "0 0 * * 0" # run weekly on Sundays
 
 jobs:
   build-debs:
@@ -16,12 +14,6 @@ jobs:
         with:
           buildpackage-opts: --build=binary --no-sign
           source-dir: decred/decred-linux-amd64-v2.1.1
-
-      - uses: actions/upload-artifact@v4
-        with:
-          path: debian/artifacts/*.deb
-          name: decred.deb
-          compression-level: 0 # no compression
 
       - uses: softprops/action-gh-release@v2
         if: github.ref_type == 'tag'
