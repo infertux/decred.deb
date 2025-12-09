@@ -1,3 +1,4 @@
+# Source field must match the first Package field below
 Source: dcrctl
 Section: net
 Priority: optional
