@@ -13,12 +13,12 @@ jobs:
           DEB_BUILD_OPTIONS: noautodbgsym
         with:
           buildpackage-opts: --build=binary --no-sign
-          source-dir: decred/decred-linux-amd64-v2.1.1
+          source-dir: decred/decred-linux-amd64-v2.1.2
 
       - uses: softprops/action-gh-release@v2
         if: github.ref_type == 'tag'
         with:
           files: |
-            debian/artifacts/dcrctl_2.1.1-1_amd64.deb
-            debian/artifacts/dcrd_2.1.1-1_amd64.deb
-            debian/artifacts/dcrwallet_2.1.1-1_amd64.deb
+            debian/artifacts/dcrctl_2.1.2-1_amd64.deb
+            debian/artifacts/dcrd_2.1.2-1_amd64.deb
+            debian/artifacts/dcrwallet_2.1.2-1_amd64.deb

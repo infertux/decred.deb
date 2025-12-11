@@ -1,0 +1,3 @@
+#!/usr/bin/dh-exec
+sample-dcrd.conf => /etc/decred/dcrd.conf
+dcrd => /usr/bin/dcrd
