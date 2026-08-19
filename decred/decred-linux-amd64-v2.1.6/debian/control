@@ -1,0 +1,26 @@
+# Source field must match the first Package field below
+Source: dcrctl
+Section: net
+Priority: optional
+Maintainer: Cédric Félizard <cedric@felizard.fr>
+Build-Depends: debhelper-compat (= 13), dh-exec
+Standards-Version: 4.7.0
+Homepage: https://github.com/decred/decred-binaries/releases
+
+Package: dcrctl
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser
+Description: Decred dcrctl
+ Decred CLI utility in Go
+
+Package: dcrd
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser, dcrctl
+Description: Decred dcrd
+ Decred daemon in Go
+
+Package: dcrwallet
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}, adduser, dcrctl
+Description: Decred dcrwallet
+ Decred CLI wallet in Go
